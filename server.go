@@ -33,7 +33,7 @@ func blogHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	blogID := vars["blogID"]
 
-	tmpl := template.Must(template.ParseFiles("public/templates/header.tmpl", "public/templates/footer.tmpl", fmt.Sprintf("public/html/blog/%s", blogID)))
+	tmpl := template.Must(template.ParseFiles("public/templates/header.tmpl", "public/templates/footer.tmpl", fmt.Sprintf("public/html/blog/%s.html", blogID)))
 	err := tmpl.ExecuteTemplate(w, fmt.Sprintf("%s.html", blogID), nil)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
