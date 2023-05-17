@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'InconsolataMono';
+  src: url('/public/fonts/Inconsolata\ Regular\ Nerd\ Font\ Complete\ Mono.ttf');
+}
+
+body {
+  font-family: 'InconsolataMono', Arial, sans-serif;
+}

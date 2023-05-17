@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Template</title>
+	<link href="/public/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/public/css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<main>
+
+		{{ template "header.tmpl" }}
+
+		<div class="container d-flex flex-column min-vh-100">
+			<div class="flex-grow-1">
+				<div class="row">
+					<div class="col-12 col-md-8 offset-md-2 mt-4">
+
+						<div class="row">
+							<div class="col-6 text-center">
+								hello
+							</div>
+							<div class="col-6 text-center">
+								world
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{{ template "footer.tmpl" }}
+	</main>
+
+	<script src="/public/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	<script src="/public/js/darkmode.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
