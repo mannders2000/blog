@@ -14,6 +14,7 @@ import (
 func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/", indexHandler).Methods("GET")
+	router.HandleFunc("/book", bookHandler).Methods("GET")
 	router.HandleFunc("/blog/{blogID}", blogHandler).Methods("GET")
 	router.PathPrefix("/public/").HandlerFunc(getPublic)
 
@@ -24,6 +25,14 @@ func main() {
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("public/templates/header.tmpl", "public/templates/footer.tmpl", "public/html/index.html"))
 	err := tmpl.ExecuteTemplate(w, "index.html", nil)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+}
+
+func bookHandler(w http.ResponseWriter, r *http.Request) {
+	tmpl := template.Must(template.ParseFiles("public/templates/header.tmpl", "public/templates/footer.tmpl", "public/html/book.html"))
+	err := tmpl.ExecuteTemplate(w, "book.html", nil)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
