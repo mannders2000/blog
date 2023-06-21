@@ -27,7 +27,9 @@ function loadTheme() {
         darkModeSwitch.checked = storedTheme === 'dark';
         setIcon(storedTheme === 'dark');
     } else {
-        setIcon(false);
+        document.body.setAttribute('data-bs-theme', 'dark');
+        darkModeSwitch.checked = true;
+        setIcon(true);
     }
 }
 
