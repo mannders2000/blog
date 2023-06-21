@@ -19,20 +19,25 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-8 mx-auto">
 
-
 					<div class="text-start">
-						<h1>Matt J. Anderson</h1>
-						<p>matta9001@gmail.com | Chicago, IL 60602 | (224)-636-3719</p>
+						<h1 class="text-center cursor">></h1>
+						<h1 class="text-center">Matt J. Anderson </h1>
+						<p class="text-center">matta9001@gmail.com | Chicago, IL 60602 | (224)-636-3719</p>
 						<p><a href="https://github.com/matta9001">github.com/matta9001</a> | <a
 								href="https://matta9001.github.io">matta9001.github.io</a> | <a
 								href="https://linkedin.com/in/matthew-j-anderson">linkedin.com/in/matthew-j-anderson</a>
 						</p>
 
-						<h2>TECHNICAL SKILLS</h2>
-						<p>Python, Go, Java, C, Docker, Kubernetes, Linux, Git, GitHub Actions, Vim, Dart/Flutter,
-							Hardware, HTML/CSS/JS, SQL, Unity3D, Haskell</p>
+						<h2 class="text-center">TECHNICAL SKILLS</h2>
+						<p><span class="badge rounded-pill text-bg-info">*Go*</span>,
+							<span class="badge rounded-pill text-bg-warning">*Python*</span>,
+							<span class="badge rounded-pill text-bg-secondary">*Linux*</span>,
+							<span class="badge rounded-pill text-bg-dark">*GitHub Actions*</span>,
+							Docker, (neo)vim, Java, C, Kubernetes, Git, Dart/Flutter,
+							Hardware, HTML/CSS/JS, SQL, Unity3D, Haskell
+						</p>
 
-						<h2>EXPERIENCE</h2>
+						<h2 class="text-center">EXPERIENCE</h2>
 						<h3>TIBCO Software - Software Engineer</h3>
 						<p>May 2020 – Present</p>
 						<ul>
@@ -57,7 +62,7 @@
 								traffic lights.</li>
 						</ul>
 
-						<h2>PROJECTS</h2>
+						<h2 class="text-center">PROJECTS</h2>
 						<h3>Mobile Applications - Cross Platform Applications</h3>
 						<p>June 2015 - Present</p>
 						<ul>
@@ -78,14 +83,14 @@
 							</li>
 						</ul>
 
-						<h2>EDUCATION</h2>
+						<h2 class="text-center">EDUCATION</h2>
 						<h3>Illinois Institute of Technology, Chicago IL</h3>
 						<p>May 2021 – GPA: 3.6/4</p>
 						<p>Bachelor of Science in Computer Science</p>
 						<p>Coursework: Data Structures and Algorithms, Systems Programming, Computer Graphics, Discrete
 							Structures, OOP.</p>
 
-						<h2>Teaching Assistant - Data Structures and OOP TA</h2>
+						<h2 class="text-center">Teaching Assistant - Data Structures and OOP TA</h2>
 						<p>August 2019 – May 2020</p>
 						<ul>
 							<li>Independently hosted TA sessions for Data Structures and Algorithms in Python,
@@ -95,7 +100,7 @@
 								and OOP principles such as objects, arrays, loops, and more.</li>
 						</ul>
 
-						<h2>Association for Computing Machinery</h2>
+						<h2 class="text-center">Association for Computing Machinery</h2>
 						<p>August 2018 – May 2021</p>
 						<ul>
 							<li>Developed a KaiOS mobile application to help individuals escape poverty. This won the
@@ -116,6 +121,12 @@
 
 	<script src="/public/js/bootstrap.min.js" crossorigin="anonymous"></script>
 	<script src="/public/js/darkmode.js" crossorigin="anonymous"></script>
+    <script>
+        var cursor = document.querySelector('.cursor');
+        setInterval(function() {
+            cursor.style.visibility = cursor.style.visibility === 'visible' ? 'hidden' : 'visible';
+        }, 2000);
+    </script>
 </body>
 
 </html>
