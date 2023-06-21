@@ -13,18 +13,31 @@ import (
 
 func main() {
 	router := mux.NewRouter()
-	router.HandleFunc("/", indexHandler).Methods("GET")
-	router.HandleFunc("/book", bookHandler).Methods("GET")
+
+	router.HandleFunc("/", homeHandler).Methods("GET")
+
+	router.HandleFunc("/blog", getBlogHandler).Methods("GET")
 	router.HandleFunc("/blog/{blogID}", blogHandler).Methods("GET")
+
+	router.HandleFunc("/book", bookHandler).Methods("GET")
+
 	router.PathPrefix("/public/").HandlerFunc(getPublic)
 
 	fmt.Println("starting on http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
 
-func indexHandler(w http.ResponseWriter, r *http.Request) {
+func homeHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("public/templates/header.tmpl", "public/templates/footer.tmpl", "public/html/index.html"))
 	err := tmpl.ExecuteTemplate(w, "index.html", nil)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+}
+
+func getBlogHandler(w http.ResponseWriter, r *http.Request) {
+	tmpl := template.Must(template.ParseFiles("public/templates/header.tmpl", "public/templates/footer.tmpl", "public/html/blog.html"))
+	err := tmpl.ExecuteTemplate(w, "blog.html", nil)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
