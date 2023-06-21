@@ -4,15 +4,15 @@ function setIcon(isDark) {
 }
 
 function toggleTheme() {
-    const htmlEl = document.documentElement;
-    const currentTheme = htmlEl.getAttribute('data-bs-theme');
+    const bodyEl = document.body;
+    const currentTheme = bodyEl.getAttribute('data-bs-theme');
 
     if (currentTheme === 'dark') {
-        htmlEl.setAttribute('data-bs-theme', 'light');
+        bodyEl.setAttribute('data-bs-theme', 'light');
         localStorage.setItem('theme', 'light');
         setIcon(false);
     } else {
-        htmlEl.setAttribute('data-bs-theme', 'dark');
+        bodyEl.setAttribute('data-bs-theme', 'dark');
         localStorage.setItem('theme', 'dark');
         setIcon(true);
     }
@@ -23,7 +23,7 @@ function loadTheme() {
     const darkModeSwitch = document.getElementById('darkModeSwitch');
 
     if (storedTheme) {
-        document.documentElement.setAttribute('data-bs-theme', storedTheme);
+        document.body.setAttribute('data-bs-theme', storedTheme);
         darkModeSwitch.checked = storedTheme === 'dark';
         setIcon(storedTheme === 'dark');
     } else {

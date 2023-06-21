@@ -3,6 +3,17 @@
   src: url('/public/fonts/Inconsolata\ Regular\ Nerd\ Font\ Complete\ Mono.ttf');
 }
 
+/* Background color for light mode */
+body[data-bs-theme='light'] {
+    background-color: #FAFAFA; /* Change to your preferred light mode background color */
+}
+
+/* Background color for dark mode */
+body[data-bs-theme='dark'] {
+    background-color: #111111; /* Change to your preferred dark mode background color */
+}
+
+
 body {
   font-family: 'InconsolataMono', Arial, sans-serif;
 }
