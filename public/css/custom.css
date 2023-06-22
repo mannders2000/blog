@@ -4,12 +4,14 @@
 }
 
 /* Background color for light mode */
-body[data-bs-theme='light'] {
+body[data-bs-theme='light'],
+body[data-bs-theme='light'] .navbar {
     background-color: #FAFAFA; /* Change to your preferred light mode background color */
 }
 
 /* Background color for dark mode */
-body[data-bs-theme='dark'] {
+body[data-bs-theme='dark'],
+body[data-bs-theme='dark'] .navbar {
     background-color: #111111; /* Change to your preferred dark mode background color */
 }
 
