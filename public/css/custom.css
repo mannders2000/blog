@@ -1,3 +1,14 @@
 [data-bs-theme="dark"] {
 	--bs-body-bg: #000000;
 }
+
+@font-face {
+	font-family: 'MyCustomFont';
+	src: url('/public/fonts/inconsolata-mono.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: 'MyCustomFont', sans-serif;
+}
