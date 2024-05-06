@@ -62,22 +62,3 @@ func projectHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
-
-//func getPublic(w http.ResponseWriter, r *http.Request) {
-//	path := r.URL.Path
-//	filePath := filepath.Join(".", path)
-//
-//	if strings.HasPrefix(path, "/public/css") {
-//		w.Header().Set("Content-Type", "text/css")
-//	} else if strings.HasPrefix(path, "/public/js") {
-//		w.Header().Set("Content-Type", "application/javascript")
-//	} else if strings.HasPrefix(path, "/public/images") {
-//		w.Header().Set("Content-Type", "image/jpeg")
-//	} else if strings.HasPrefix(path, "/public/images") {
-//		w.Header().Set("Content-Type", "image/png")
-//	} else if strings.HasPrefix(path, "/public/fonts") {
-//		w.Header().Set("Content-Type", "fonts/font")
-//	}
-//
-//	http.ServeFile(w, r, filePath)
-//}
