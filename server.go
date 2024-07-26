@@ -17,7 +17,7 @@ func main() {
 	mux.HandleFunc("GET /book", bookHandler)
 	mux.Handle("GET /public/", http.StripPrefix("/public", http.FileServer(http.Dir("./public"))))
 
-	fmt.Println("starting on http://localhost:8080")
+	fmt.Println("starting on 0.0.0.0:8080")
 	log.Fatal(http.ListenAndServe(":8080", mux))
 }
 
